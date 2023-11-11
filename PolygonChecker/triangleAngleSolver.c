@@ -5,23 +5,34 @@
 
 #include "triangleAngleSolver.h"
 
-char* SolveAngles(int side1, int side2, int side3) {
-	char* result = "";
+void SolveAngles(double side1, double side2, double side3) {
+	
 	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
-		result = "Not a triangle";
+		printf("Not a triangle");
 	}
 	else if (side1 == side2 && side1 == side3) {
-		result = ("Equilateral triangle. all angles are: 60 degrees");
+		printf("Equilateral triangle. All angles are: 60 degrees");
 	}
-	else if ((side1 == side2 && side1 != side3) ||
-		(side1 == side3 && side1 != side2))
+	else if ((side1 == side2 && side1 != side3) || (side1 == side3 && side1 != side2)) // not checking for if side 3 adn 2 are the same
 	{
-		result = ("Isosceles triangle. The angles are: %lf, %d, %d, ", acos((side1*side1) + (side2*side2) - (side3*side3) / (2*side1*side2)), 0, 0);
-		printf(result);
+
+		//double angle1= acos(((side2*side2)+(side3*side3)-(side1*side1))/(2*side2*side3));
+		double angle1 = acos((( side2 * side2 + side3 * side3 - side1 * side1) / (2 * side2 * side3)));
+		angle1 = (angle1*(180/3.141592653589793238462643383));
+		double angle2 = acos(((side1*side1) + (side2*side2) - (side3*side3)) / (2*side1*side2));
+		angle2 = (angle2 * (180 / 3.141592653589793238462643383));
+		double angle3 = acos(((side1*side1) + (side3*side3) - (side2*side2)) / (2*side1*side3));
+		angle3 = (angle3 * (180 / 3.141592653589793238462643383));
+
+		printf("\nIsosceles triangle. The angles are: %lf, %lf , %lf, \n", angle1, angle2, angle3);
 	}
 	else {
-		result = "Scalene triangle";
+		double angle1 = acos(((side2 * side2 + side3 * side3 - side1 * side1) / (2 * side2 * side3)));
+		angle1 = (angle1 * (180 / 3.141592653589793238462643383));
+		double angle2 = acos(((side1 * side1) + (side2 * side2) - (side3 * side3)) / (2 * side1 * side2));
+		angle2 = (angle2 * (180 / 3.141592653589793238462643383));
+		double angle3 = acos(((side1 * side1) + (side3 * side3) - (side2 * side2)) / (2 * side1 * side3));
+		angle3 = (angle3 * (180 / 3.141592653589793238462643383));
+		printf("Scalene triangle. The angles are: %lf, %lf, %lf, \n", angle1, angle2, angle3);
 	}
-
-	return result;
 }

@@ -7,20 +7,39 @@
 
 void SolveAngles(double side1, double side2, double side3) {
 	
+	bool realtriangle = FindIfInputMakesTrignale(side1, side2, side3);
+
 	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+		printf("Not a triangle");
+	}
+	else if (realtriangle == false) {
 		printf("Not a triangle");
 	}
 	else if (side1 == side2 && side1 == side3) {
 		printf("Equilateral triangle. All angles are: 60 degrees");
 	}
-	else if ((side1 == side2 && side1 != side3) || (side1 == side3 && side1 != side2)) // not checking for if side 3 adn 2 are the same
-	{
+	else if ((side1 == side2 && side1 != side3) || (side1 == side3 && side1 != side2) || (side2 == side3 && side2 != side1)) {
 		CalculateAngles(side1, side2, side3, "Isosceles");
 	}
 	else {
 		CalculateAngles(side1, side2, side3, "Scalene");
-
 	}
+}
+
+bool FindIfInputMakesTrignale(double side1, double side2, double side3) {
+	int count = 0;
+
+	if (side1 + side2 > side3)
+		count++;	
+	if (side2 + side3 > side1)
+		count++;	
+	if (side1 + side3 > side2)
+		count++;
+	
+	if (count != 3)
+		return false;
+
+	return true;
 }
 
 void CalculateAngles(double side1, double side2, double side3, char* NameOfTriangle) {

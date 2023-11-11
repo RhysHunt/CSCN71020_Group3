@@ -31,8 +31,9 @@ int main() {
 			break;
 		case 2:
 			printf_s("Rectangle elected.\n");
-			getRectSides(&points);
-			PrintRectanglePerimeter(&points);
+			getRectSides(points);
+			PrintRectanglePerimeter(points);
+			PrintAreaOfRectangle(points);
 		case 0:
 			continueProgram = false;
 			break;
@@ -82,6 +83,8 @@ void getRectSides(POINTS points[]) {
 		scanf_s("%d", &points[i].x);
 		printf_s("y variable %d: ", (i+1));
 		scanf_s("%d", &points[i].y);
+		printf("point %d is (%d, %d)\n", i+1, points[i].x, points[i].y);
+		printf("--------------------------\n");
 	}
 	printf_s("\npoint %d: (%d, %d)", (1), points[0].x, points[0].y);
 	printf_s("\npoint %d: (%d, %d)", (2), points[1].x, points[1].y);

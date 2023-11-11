@@ -32,6 +32,7 @@ int main() {
 		case 2:
 			printf_s("Rectangle elected.\n");
 			getRectSides(&points);
+			PrintRectanglePerimeter(&points);
 		case 0:
 			continueProgram = false;
 			break;

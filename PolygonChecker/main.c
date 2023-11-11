@@ -6,7 +6,7 @@
 #include "triangleAngleSolver.h"
 
 int side = 0;
-//i am going to lose it
+
 int main() {
 	bool continueProgram = true;
 	

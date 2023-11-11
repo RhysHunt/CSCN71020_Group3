@@ -15,24 +15,22 @@ void SolveAngles(double side1, double side2, double side3) {
 	}
 	else if ((side1 == side2 && side1 != side3) || (side1 == side3 && side1 != side2)) // not checking for if side 3 adn 2 are the same
 	{
-
-		//double angle1= acos(((side2*side2)+(side3*side3)-(side1*side1))/(2*side2*side3));
-		double angle1 = acos((( side2 * side2 + side3 * side3 - side1 * side1) / (2 * side2 * side3)));
-		angle1 = (angle1*(180/3.141592653589793238462643383));
-		double angle2 = acos(((side1*side1) + (side2*side2) - (side3*side3)) / (2*side1*side2));
-		angle2 = (angle2 * (180 / 3.141592653589793238462643383));
-		double angle3 = acos(((side1*side1) + (side3*side3) - (side2*side2)) / (2*side1*side3));
-		angle3 = (angle3 * (180 / 3.141592653589793238462643383));
-
-		printf("\nIsosceles triangle. The angles are: %lf, %lf , %lf, \n", angle1, angle2, angle3);
+		CalculateAngles(side1, side2, side3, "Isosceles");
 	}
 	else {
-		double angle1 = acos(((side2 * side2 + side3 * side3 - side1 * side1) / (2 * side2 * side3)));
-		angle1 = (angle1 * (180 / 3.141592653589793238462643383));
-		double angle2 = acos(((side1 * side1) + (side2 * side2) - (side3 * side3)) / (2 * side1 * side2));
-		angle2 = (angle2 * (180 / 3.141592653589793238462643383));
-		double angle3 = acos(((side1 * side1) + (side3 * side3) - (side2 * side2)) / (2 * side1 * side3));
-		angle3 = (angle3 * (180 / 3.141592653589793238462643383));
-		printf("Scalene triangle. The angles are: %lf, %lf, %lf, \n", angle1, angle2, angle3);
+		CalculateAngles(side1, side2, side3, "Scalene");
+
 	}
+}
+
+void CalculateAngles(double side1, double side2, double side3, char* NameOfTriangle) {
+
+	double angle1 = acos(((side2 * side2 + side3 * side3 - side1 * side1) / (2 * side2 * side3)));
+	angle1 = (angle1 * (180 / 3.141592653589793238462643383));
+	double angle2 = acos(((side1 * side1) + (side2 * side2) - (side3 * side3)) / (2 * side1 * side2));
+	angle2 = (angle2 * (180 / 3.141592653589793238462643383));
+	double angle3 = acos(((side1 * side1) + (side3 * side3) - (side2 * side2)) / (2 * side1 * side3));
+	angle3 = (angle3 * (180 / 3.141592653589793238462643383));
+
+	printf("%s triangle. The angles are: %lf, %lf, %lf, \n", NameOfTriangle, angle1, angle2, angle3);
 }

@@ -1,5 +1,4 @@
 #pragma once
-void printRectangleArea()
 
 typedef struct points {
 	int x;

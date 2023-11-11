@@ -5,8 +5,9 @@
 #include "triangleSolver.h"
 #include "triangleAngleSolver.h"
 
+
 int side = 0;
-//i am going to lose it
+
 int main() {
 	bool continueProgram = true;
 	
@@ -14,7 +15,9 @@ int main() {
 		printWelcome();
 
 		int shapeChoice = printShapeMenu();
-
+		int X;
+		int Y;
+		POINTS points[4] = { 0 };
 		switch (shapeChoice)
 		{
 		case 1:
@@ -25,9 +28,13 @@ int main() {
 			SolveAngles(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			//printf_s("%s\n", result);
 			break;
+		case 2:
+			printf_s("Rectangle elected.\n");
+			getRectSides(&points);
 		case 0:
 			continueProgram = false;
 			break;
+		
 		default:
 			printf_s("Invalid value entered.\n");
 			break;
@@ -46,6 +53,7 @@ void printWelcome() {
 
 int printShapeMenu() {
 	printf_s("1. Triangle\n");
+	printf_s("2. Rectangle\n");
 	printf_s("0. Exit\n");
 
 	int shapeChoice;
@@ -63,4 +71,14 @@ double* getTriangleSides(double* triangleSides) {
 		scanf_s("%lf", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+
+void getRectSides(POINTS points[]) {
+	printf_s("Enter the x and y of the rectangle: ");
+	for (int i = 0; i < 4; i++) {
+		printf_s("x variable: ");
+		scanf_s("%d", &points[i].x);
+		printf_s("y variable: ");
+		scanf_s("%d", &points[i].y);
+	}
 }

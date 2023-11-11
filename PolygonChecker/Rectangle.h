@@ -6,3 +6,4 @@ typedef struct points {
 }POINTS;
 
 void getRectSides(POINTS(points[]));
+void PrintRectanglePerimeter(POINTS* points);

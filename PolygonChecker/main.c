@@ -75,11 +75,15 @@ double* getTriangleSides(double* triangleSides) {
 }
 
 void getRectSides(POINTS points[]) {
-	printf_s("Enter the x and y of the rectangle: ");
+	printf_s("Enter the x and y of the rectangle: \n");
 	for (int i = 0; i < 4; i++) {
-		printf_s("x variable: ");
+		printf_s("x variable %d: ", (i+1));
 		scanf_s("%d", &points[i].x);
-		printf_s("y variable: ");
+		printf_s("y variable %d: ", (i+1));
 		scanf_s("%d", &points[i].y);
 	}
+	printf_s("\npoint %d: (%d, %d)", (1), points[0].x, points[0].y);
+	printf_s("\npoint %d: (%d, %d)", (2), points[1].x, points[1].y);
+	printf_s("\npoint %d: (%d, %d)", (3), points[2].x, points[2].y);
+	printf_s("\npoint %d: (%d, %d)", (4), points[3].x, points[3].y);
 }

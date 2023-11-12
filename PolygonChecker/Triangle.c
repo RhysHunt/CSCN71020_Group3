@@ -1,9 +1,10 @@
+// Aiden - Rhys - Ben -- GROUP 3 -- 
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
-#include "triangleSolver.h"
 
-#include "triangleAngleSolver.h"
+#include "Triangle.h"
 
 void SolveAngles(double side1, double side2, double side3) {
 	
@@ -24,6 +25,16 @@ void SolveAngles(double side1, double side2, double side3) {
 	else {
 		CalculateAngles(side1, side2, side3, "Scalene");
 	}
+}
+double* getTriangleSides(double* triangleSides) {
+	printf_s("Enter the three sides of the triangle: ");
+	for (int i = 0; i < 3; i++) {
+		if (scanf_s("%lf", &triangleSides[i]) != 1) {
+			printf("not a vaild input\n");
+			exit(1);
+		}
+	}
+	return triangleSides;
 }
 
 bool FindIfInputMakesTrignale(double side1, double side2, double side3) {

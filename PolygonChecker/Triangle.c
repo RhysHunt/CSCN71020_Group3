@@ -27,7 +27,7 @@ void SolveAngles(double side1, double side2, double side3) {
 	}
 }
 double* getTriangleSides(double* triangleSides) {
-	printf_s("Enter the three sides of the triangle (Example: '3 3 3': ");
+	printf_s("Enter the three sides of the triangle (Example: '3 3 3'): ");
 	for (int i = 0; i < 3; i++) {
 		if (scanf_s("%lf", &triangleSides[i]) != 1) {
 			printf("not a vaild input\n");

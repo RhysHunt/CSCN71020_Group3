@@ -21,6 +21,9 @@ int main() {
 		POINTS points[4] = { 0 };
 		switch (shapeChoice)
 		{
+		case 0:
+			continueProgram = false;
+			break;
 		case 1:
 			printf_s("Triangle selected.\n");
 			double triangleSides[3] = { 0, 0, 0 };
@@ -32,12 +35,11 @@ int main() {
 		case 2:
 			printf_s("Rectangle elected.\n");
 			getRectSides(points);
+			PutPointsInOrder(points);
+			CheckIfRectngle(points);
 			PrintRectanglePerimeter(points);
 			PrintAreaOfRectangle(points);
-		case 0:
-			continueProgram = false;
 			break;
-		
 		default:
 			printf_s("Invalid value entered.\n");
 			break;
@@ -62,16 +64,22 @@ int printShapeMenu() {
 	int shapeChoice;
 
 	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
+	if (scanf_s("%1o", &shapeChoice) != 1) {
+		printf("not a vaild input\n");
+		exit(1);
+	}
+
 
 	return shapeChoice;
 }
 
 double* getTriangleSides(double* triangleSides) {
 	printf_s("Enter the three sides of the triangle: ");
-	for (int i = 0; i < 3; i++)
-	{
-		scanf_s("%lf", &triangleSides[i]);
+	for (int i = 0; i < 3; i++) {
+		if (scanf_s("%lf", &triangleSides[i]) != 1) {
+			printf("not a vaild input");
+			exit(1);
+		}
 	}
 	return triangleSides;
 }
@@ -80,14 +88,14 @@ void getRectSides(POINTS points[]) {
 	printf_s("Enter the x and y of the rectangle: \n");
 	for (int i = 0; i < 4; i++) {
 		printf_s("x variable %d: ", (i+1));
-		scanf_s("%d", &points[i].x);
+		int vaildinput1 = scanf_s("%d", &points[i].x);
 		printf_s("y variable %d: ", (i+1));
-		scanf_s("%d", &points[i].y);
-		printf("point %d is (%d, %d)\n", i+1, points[i].x, points[i].y);
+		int vaildinput2 = scanf_s("%d", &points[i].y);
+		printf("\npoint %d is (%d, %d)\n", i+1, points[i].x, points[i].y);
 		printf("--------------------------\n");
+		if (vaildinput1 + vaildinput2 != 2) {
+			printf("not a vaild input\n");
+			exit(1);
+		}
 	}
-	printf_s("\npoint %d: (%d, %d)", (1), points[0].x, points[0].y);
-	printf_s("\npoint %d: (%d, %d)", (2), points[1].x, points[1].y);
-	printf_s("\npoint %d: (%d, %d)", (3), points[2].x, points[2].y);
-	printf_s("\npoint %d: (%d, %d)", (4), points[3].x, points[3].y);
 }

@@ -1,3 +1,5 @@
+// Aiden - Rhys - Ben -- GROUP 3 -- 
+
 #include "Rectangle.h"
 
 #define MAXSIZE		4
@@ -42,6 +44,7 @@ double CalculateSideLength4(POINTS* points) {
 
 	return distance;
 }
+
 void PutPointsInOrder(POINTS* points) {
 	double x1 = points[0].x;
 	double x2 = points[1].x;
@@ -102,4 +105,20 @@ void PrintAreaOfRectangle(POINTS* points) {
 	double area = distance1 * distance2;
 
 	printf("\nThe Area of the given rectangle is: %lf", area);
+}
+
+void getRectSides(POINTS points[]) {
+	printf_s("Enter the x and y of the rectangle: \n");
+	for (int i = 0; i < 4; i++) {
+		printf_s("x variable %d: ", (i + 1));
+		int vaildinput1 = scanf_s("%d", &points[i].x);
+		printf_s("y variable %d: ", (i + 1));
+		int vaildinput2 = scanf_s("%d", &points[i].y);
+		printf("\npoint %d is (%d, %d)\n", i + 1, points[i].x, points[i].y);
+		printf("--------------------------\n");
+		if (vaildinput1 + vaildinput2 != 2) {
+			printf("not a vaild input\n");
+			exit(1);
+		}
+	}
 }

@@ -157,8 +157,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\PolygonChecker\Rectangle.c" />
-    <ClCompile Include="..\PolygonChecker\triangleAngleSolver.c" />
-    <ClCompile Include="..\PolygonChecker\triangleSolver.c" />
+    <ClCompile Include="..\PolygonChecker\Triangle.c" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -169,8 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\PolygonChecker\Rectangle.h" />
-    <ClInclude Include="..\PolygonChecker\triangleAngleSolver.h" />
-    <ClInclude Include="..\PolygonChecker\triangleSolver.h" />
+    <ClInclude Include="..\PolygonChecker\Triangle.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

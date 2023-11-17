@@ -5,8 +5,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 extern "C" {
 #include "../PolygonChecker/Rectangle.h"
-#include "../PolygonChecker/triangleAngleSolver.h"
-#include "../PolygonChecker/triangleSolver.h"
+#include "../PolygonChecker/Triangle.h"
 }
 
 namespace PolygonTests

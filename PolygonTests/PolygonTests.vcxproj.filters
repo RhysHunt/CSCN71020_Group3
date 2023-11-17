@@ -24,10 +24,7 @@
     <ClCompile Include="..\PolygonChecker\Rectangle.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\PolygonChecker\triangleAngleSolver.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PolygonChecker\triangleSolver.c">
+    <ClCompile Include="..\PolygonChecker\Triangle.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,10 +35,7 @@
     <ClInclude Include="..\PolygonChecker\Rectangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\PolygonChecker\triangleAngleSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\PolygonChecker\triangleSolver.h">
+    <ClInclude Include="..\PolygonChecker\Triangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

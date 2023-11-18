@@ -6,24 +6,29 @@
 
 #include "Triangle.h"
 
-void SolveAngles(double side1, double side2, double side3) {
+char* SolveAngles(double side1, double side2, double side3) {
 	
 	bool realtriangle = FindIfInputMakesTrignale(side1, side2, side3);
 
 	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
 		printf("Not a triangle");
+		return "not a triangle";
 	}
 	else if (realtriangle == false) {
 		printf("Not a triangle");
+		return "not a triangle";
 	}
 	else if (side1 == side2 && side1 == side3) {
 		printf("Equilateral triangle. All angles are: 60 degrees");
+		return "equilateral";
 	}
 	else if ((side1 == side2 && side1 != side3) || (side1 == side3 && side1 != side2) || (side2 == side3 && side2 != side1)) {
 		CalculateAngles(side1, side2, side3, "Isosceles");
+		return "isosceles";
 	}
 	else {
 		CalculateAngles(side1, side2, side3, "Scalene");
+		return "scalene";
 	}
 }
 double* getTriangleSides(double* triangleSides) {

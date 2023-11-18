@@ -53,7 +53,7 @@ bool FindIfInputMakesTrignale(double side1, double side2, double side3) {
 	return true;
 }
 
-void CalculateAngles(double side1, double side2, double side3, char* NameOfTriangle) {
+float CalculateAngles(double side1, double side2, double side3, char* NameOfTriangle) {
 
 	double angle1 = acos(((side2 * side2 + side3 * side3 - side1 * side1) / (2 * side2 * side3)));
 	angle1 = (angle1 * (180 / 3.141592653589793238462643383));
@@ -62,5 +62,8 @@ void CalculateAngles(double side1, double side2, double side3, char* NameOfTrian
 	double angle3 = acos(((side1 * side1) + (side3 * side3) - (side2 * side2)) / (2 * side1 * side3));
 	angle3 = (angle3 * (180 / 3.141592653589793238462643383));
 
+	float anglesAdded = angle1 + angle2 + angle3;
+
 	printf("%s triangle. The angles are: %lf, %lf, %lf, \n", NameOfTriangle, angle1, angle2, angle3);
+	return anglesAdded;
 }

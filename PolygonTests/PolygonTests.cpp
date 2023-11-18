@@ -57,5 +57,49 @@ namespace PolygonTests
 
 			Assert::AreEqual(actual, expected);
 		}
+		TEST_METHOD(notanytypeoftrianle_test1)
+		{
+			char* expected = "not a triangle";
+
+			char* actual = SolveAngles(0, 0, 0);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test2)
+		{
+			char* expected = "not a triangle";
+
+			// check 3 input if its good
+			char* actual = SolveAngles(5, 4, 0);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test3)
+		{
+			char* expected = "not a triangle";
+
+			// check 2 input if its good
+			char* actual = SolveAngles(5, 0, 4);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test4)
+		{
+			char* expected = "not a triangle";
+
+			// check 1 input if its good
+			char* actual = SolveAngles(0, 4, 5);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test5)
+		{
+			char* expected = "not a triangle";
+
+			// if its not a triangle at all
+			char* actual = SolveAngles(100, 5, 5);
+
+			Assert::AreEqual(actual, expected);
+		}
 	};
 }

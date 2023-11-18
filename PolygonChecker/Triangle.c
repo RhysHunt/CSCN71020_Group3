@@ -24,11 +24,11 @@ char* SolveAngles(double side1, double side2, double side3) {
 	}
 	else if ((side1 == side2 && side1 != side3) || (side1 == side3 && side1 != side2) || (side2 == side3 && side2 != side1)) {
 		CalculateAngles(side1, side2, side3, "Isosceles");
-		return "Isosceles";
+		return "isosceles";
 	}
 	else {
 		CalculateAngles(side1, side2, side3, "Scalene");
-		return "Scalene";
+		return "scalene";
 	}
 }
 double* getTriangleSides(double* triangleSides) {

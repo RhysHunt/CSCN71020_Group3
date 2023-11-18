@@ -12,7 +12,7 @@ typedef struct points {
 	int y;
 }POINTS;
 
-void getRectSides(POINTS(points[]));
+void getRectSides(POINTS points[]);
 
 double CalculateSideLength1(POINTS* points);
 double CalculateSideLength2(POINTS* points);

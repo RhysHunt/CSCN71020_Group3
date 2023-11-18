@@ -18,9 +18,11 @@ double CalculateSideLength1(POINTS* points);
 double CalculateSideLength2(POINTS* points);
 double CalculateSideLength3(POINTS* points);
 double CalculateSideLength4(POINTS* points);
+float FindAngle(POINTS points, double distance1, double distance2, double distance5);
 
-void PrintRectanglePerimeter(POINTS* points);
-void PrintAreaOfRectangle(POINTS* points);
+double PrintRectanglePerimeter(POINTS* points);
+double PrintAreaOfRectangle(POINTS* points);
 
-void CheckIfRectngle(POINTS* points);
+bool CheckIfRectngle(POINTS* points);
+
 void PutPointsInOrder(POINTS* points);

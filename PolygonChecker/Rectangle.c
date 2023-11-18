@@ -19,7 +19,7 @@ double CalculateSideLength2(POINTS* points) {
 	x1 = points[1].x;
 	x2 = points[2].x;
 	y1 = points[1].y;
-	y2 = points[2].y;
+	y2 = points[2].y; 
 	double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 
 	return distance;
@@ -43,6 +43,28 @@ double CalculateSideLength4(POINTS* points) {
 	double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 
 	return distance;
+}
+
+double CalculateCrossLength(POINTS* points) {
+	double x1, x2, y1, y2;
+	x1 = points[0].x;
+	x2 = points[2].x;
+	y1 = points[0].y;
+	y2 = points[2].y;
+	double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+	return distance;
+}
+
+float FindAngle(POINTS points, double distance1, double distance2, double distance5) {
+
+	distance1 = pow(distance1, 2);
+	distance2 = pow(distance2, 2);
+	distance5 = pow(distance5, 2);
+	double angle1 = acos((distance1 + distance5 - distance2) / (2 * distance1 * distance5));
+	angle1 = (angle1 * (180 / 3.141592653589793238462643383));
+
+	return angle1;
 }
 
 void PutPointsInOrder(POINTS* points) {
@@ -72,39 +94,46 @@ void PutPointsInOrder(POINTS* points) {
 	}
 }
 
-void CheckIfRectngle(POINTS* points) {
+bool CheckIfRectngle(POINTS* points) {
 	double distance1 = CalculateSideLength1(points);
 	double distance2 = CalculateSideLength2(points);
 	double distance3 = CalculateSideLength3(points);
 	double distance4 = CalculateSideLength4(points);
+	double distance5 = CalculateCrossLength(points);
+	float angle = FindAngle(*points, distance1, distance2, distance5);
 
 	//printf("%lf, %lf, %lf, %lf", distance1, distance2, distance3, distance4);
 
-	if (distance1 == distance3 && distance2 == distance4) {
+	if (distance1 == distance3 && distance2 == distance4 && angle == 90) {
 		printf("is rectangle\n");
+		return true;
 	}
 	else {
 		printf("not a rectangle\n");
-		exit(1);
+		return false;
 	}
 }
 
-void PrintRectanglePerimeter(POINTS* points) {
+double PrintRectanglePerimeter(POINTS* points) {
 	double distance1 = CalculateSideLength1(points);
 	double distance2 = CalculateSideLength2(points);
 
 	double perimeter = (distance1 + distance2) * 2;
 
 	printf("\nThe perimeter of the given rectangle is: %lf", perimeter);
+
+	return perimeter;
 }
 
-void PrintAreaOfRectangle(POINTS* points) {
+double PrintAreaOfRectangle(POINTS* points) {
 	double distance1 = CalculateSideLength1(points);
 	double distance2 = CalculateSideLength2(points);
 
 	double area = distance1 * distance2;
 
 	printf("\nThe Area of the given rectangle is: %lf", area);
+
+	return area;
 }
 
 void getRectSides(POINTS points[]) {

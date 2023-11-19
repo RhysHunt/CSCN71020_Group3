@@ -175,6 +175,6 @@ namespace PolygonTests
 
 			Assert::AreEqual(expected, length);
 		}
-
+		//test
 	};
 }

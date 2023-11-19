@@ -8,7 +8,7 @@ extern "C" {
 #include "../PolygonChecker/Rectangle.h"
 }
 
-namespace PolygonTests
+namespace PointsTests
 {
 	TEST_CLASS(PointsTest)
 	{

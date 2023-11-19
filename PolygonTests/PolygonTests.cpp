@@ -353,7 +353,7 @@ namespace PolygonTests
 
 			Assert::AreEqual(expected, real);
 		}
-		TEST_METHOD(Width_OfRectangle_IsCorrect_WhenZero)
+		TEST_METHOD(side1_OfRectangle_IsCorrect_WhenZero)
 		{
 
 			float expected = 0;
@@ -368,7 +368,7 @@ namespace PolygonTests
 
 		}
 
-		TEST_METHOD(Length_OfRectangle_IsCorrect_When0)
+		TEST_METHOD(side1_OfRectangle_IsCorrect_When0)
 		{
 
 			float expected = 0;
@@ -382,19 +382,6 @@ namespace PolygonTests
 			Assert::AreEqual(expected, length);
 		}
 
-		TEST_METHOD(Length_OfRectangle_IsCorrect_When0)
-		{
-
-			float expected = 0;
-			POINTS points[4];
-			points[1].x = 0;
-			points[1].y = 0;
-			points[2].x = 0;
-			points[2].y = 0;
-			float length = CalculateSideLength2(points);
-
-			Assert::AreEqual(expected, length);
-		}
 		//test
 	};
 }

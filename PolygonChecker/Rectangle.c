@@ -60,7 +60,7 @@ float FindAngle(POINTS points, double distance1, double distance2, double distan
 	distance1 = pow(distance1, 2);
 	distance2 = pow(distance2, 2);
 	distance5 = pow(distance5, 2);
-	double angle1 = acos((distance1 + distance5 - distance2) / (2 * distance1 * distance5));
+	double angle1 = acos((distance1 + distance2 - distance5) / (2 * distance1 * distance2));
 	angle1 = (angle1 * (180 / 3.141592653589793238462643383));
 
 	return angle1;

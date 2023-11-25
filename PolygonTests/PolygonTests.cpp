@@ -307,12 +307,12 @@ namespace PolygonTests
 			POINTS points[4];
 			points[0].x = -3;
 			points[0].y = 5;
-			points[1].x = 0;
-			points[1].y = -4;
-			points[2].x = 3;
-			points[2].y = 7;
-			points[3].x = 6;
-			points[3].y = -2;
+			points[1].x = 3;
+			points[1].y = 7;
+			points[2].x = 6;
+			points[2].y = -2;
+			points[3].x = 0;
+			points[3].y = -4;
 			bool real = CheckIfRectngle(points);
 
 			Assert::AreEqual(expected, real);

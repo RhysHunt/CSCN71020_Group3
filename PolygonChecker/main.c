@@ -37,8 +37,6 @@ int main() {
 			getRectSides(points);
 			PutPointsInOrder(points);
 			CheckIfRectngle(points);
-			PrintRectanglePerimeter(points);
-			PrintAreaOfRectangle(points);
 
 			break;
 		default:

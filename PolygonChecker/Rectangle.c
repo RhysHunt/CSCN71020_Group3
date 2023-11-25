@@ -105,6 +105,8 @@ bool CheckIfRectngle(POINTS* points) {
 
 	if (distance1 == distance3 && distance2 == distance4 && angle == 90) {
 		printf("is rectangle\n");
+		PrintRectanglePerimeter(points);
+		PrintAreaOfRectangle(points);
 		return true;
 	}
 	else {

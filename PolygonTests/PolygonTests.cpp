@@ -271,11 +271,66 @@ namespace PolygonTests
 		{
 			char* expected = "not a triangle";
 
-			// if its not a triangle at all
+			// first side is too big
 			char* actual = SolveAngles(100, 5, 5);
 
 			Assert::AreEqual(actual, expected);
 		}
+		TEST_METHOD(notanytypeoftriangle_test6)
+		{
+			char* expected = "not a triangle";
+
+			// second side is too big
+			char* actual = SolveAngles(5, 100, 5);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test7)
+		{
+			char* expected = "not a triangle";
+
+			// last side is too big
+			char* actual = SolveAngles(5, 5, 100);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test8)
+		{
+			char* expected = "not a triangle";
+
+			// first side is neagtive
+			char* actual = SolveAngles(-1, 2, 3);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test9)
+		{
+			char* expected = "not a triangle";
+
+			// second side is negative 
+			char* actual = SolveAngles(1, -2, 3);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test10)
+		{
+			char* expected = "not a triangle";
+
+			// last side is negative
+			char* actual = SolveAngles(1, 2, -3);
+
+			Assert::AreEqual(actual, expected);
+		}
+		TEST_METHOD(notanytypeoftriangle_test11)
+		{
+			char* expected = "not a triangle";
+
+			// all negative numbers
+			char* actual = SolveAngles(-1, -2, -3);
+
+			Assert::AreEqual(actual, expected);
+		}
+
 	};
 
 	TEST_CLASS(PointsTest)

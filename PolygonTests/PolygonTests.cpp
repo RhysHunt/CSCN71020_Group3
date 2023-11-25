@@ -104,6 +104,38 @@ namespace PolygonTests
 			actual = CalculateAngles(side1, side2, side3, "Icoselese");
 			Assert::AreNotEqual(expected, actual);
 		}
+		TEST_METHOD(TriangleAngles_et7)
+		{
+			double side1, side2, side3;
+			float actual, expected;
+			expected = 180, side1 = 0, side2 = 0, side3 = 0;
+			actual = CalculateAngles(side1, side2, side3, "Icoselese");
+			Assert::AreNotEqual(expected, actual);
+		}
+		TEST_METHOD(TriangleAngles_et8)
+		{
+			double side1, side2, side3;
+			float actual, expected;
+			expected = 180, side1 = 6000000000000000000, side2 = 500000000000000000, side3 = 5000000000000000000;
+			actual = CalculateAngles(side1, side2, side3, "Icoselese");
+			Assert::AreNotEqual(expected, actual);
+		}
+		TEST_METHOD(TriangleAngles_et9)
+		{
+			double side1, side2, side3;
+			float actual, expected;
+			expected = 180, side1 = 0, side2 = 60, side3 = 60;
+			actual = CalculateAngles(side1, side2, side3, "Icoselese");
+			Assert::AreNotEqual(expected, actual);
+		}
+		TEST_METHOD(TriangleAngles_et10)
+		{
+			double side1, side2, side3;
+			float actual, expected;
+			expected = 180, side1 = 5, side2 = 0, side3 = 5;
+			actual = CalculateAngles(side1, side2, side3, "Icoselese");
+			Assert::AreNotEqual(expected, actual);
+		}
 		//Boundary tests
 		TEST_METHOD(TriangleAngles_bt1)
 		{
@@ -134,6 +166,22 @@ namespace PolygonTests
 			double side1, side2, side3;
 			float actual, expected;
 			expected = 180, side1 = 1000000, side2 = 2000000, side3 = 3000000;
+			actual = CalculateAngles(side1, side2, side3, "Scalene");
+			Assert::AreEqual(expected, actual);
+		}
+		TEST_METHOD(TriangleAngles_bt5)
+		{
+			double side1, side2, side3;
+			float actual, expected;
+			expected = 180, side1 = 2, side2 = 0.001, side3 = 2;
+			actual = CalculateAngles(side1, side2, side3, "Scalene");
+			Assert::AreEqual(expected, actual);
+		}
+		TEST_METHOD(TriangleAngles_bt6)
+		{
+			double side1, side2, side3;
+			float actual, expected;
+			expected = 180, side1 = 2, side2 = 2, side3 = 0.001;
 			actual = CalculateAngles(side1, side2, side3, "Scalene");
 			Assert::AreEqual(expected, actual);
 		}
